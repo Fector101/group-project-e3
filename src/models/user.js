@@ -1,3 +1,5 @@
+// Contains Scheme For DB
+
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
