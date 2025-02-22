@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes =  require('./src/routes/admin-authn');
 const userRoutes =  require('./src/routes/user-authn');
-const adminRoutes = require('./src/routes/admin-panel');
+const adminPanelRoute = require('./src/routes/admin-panel');
 const cors = require('cors');
 const connectDB = require('./src/db');
 
@@ -21,9 +21,10 @@ app.use(cors());
 connectDB();
 
 
+app.use('/api/auth', userRoutes);
 app.use(authRoutes);
-app.use(userRoutes);
-app.use(adminRoutes);
+app.use(adminPanelRoute);
+
 
 // Routes
 // app.use('/api/auth', require('./src/routes/auth'));
