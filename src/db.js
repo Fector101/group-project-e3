@@ -1,23 +1,20 @@
 const mongoose = require('mongoose');
 
+let cachedDB;
 const uri = process.env.MONGO_URI
-let client;
-let clientPromise;
 
 if (!uri){
     throw new Error('Please add URI to env vars')
 }
 
-
-if (process.env.NODE_ENV == 'dev'){
-    if(!global._mogoClientPromise){
-        console.log('Creating new DB connection')
-        global._mogoClientPromise = mongoose.connect( uri, {useNewUrlParser: true} )
+async function connectToDatabase() {
+    if(cachedDB){
+        return cachedDB
     }
-    clientPromise = global._mogoClientPromise
-}else{
-    client = mongoose.connect( uri, {useNewUrlParser: true} )
-    clientPromise = client.connect()
+    console.log('Creating new DB connection')
+    const connection = mongoose.connect( uri, {useNewUrlParser: true} )
+    cachedDB = connection
+    return cachedDB
 }
 
-module.exports = clientPromise;
+module.exports = connectToDatabase

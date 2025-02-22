@@ -1,13 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-const connectDB = require('./src/db')
+const connectToDatabase = require('./src/db')
 
 const app = express();
 const port = process.env.PORT || 3000
 
 // Connect to MongoDB
-connectDB();
+connectToDatabase();
 
 // Middleware
 app.use(express.static('public'))
@@ -20,10 +20,15 @@ app.use(cors());
 app.use('/api/auth', require('./src/routes/authRoutes'));
 
 
+app.get('/admin',(req,res)=>{
+  // res.json({'name':'pop'})
+  res.sendFile('index.html')
+})
 
 app.get('/',(req,res)=>{
   res.sendFile('index.html')
 })
+
 
 
 
