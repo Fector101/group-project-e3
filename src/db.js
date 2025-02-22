@@ -1,19 +1,23 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(
-            // process.env.MONGO_URI,
-            `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.CLUSTER_NAME}/usersdb`,
-            {
-            useNewUrlParser: true,
-            // useUnifiedTopology: true
-        });
-        console.log('MongoDB Connected');
-    } catch (err) {
-        console.error('MongoDB Connection Error:', err);
-        process.exit(1);
-    }
-};
+const uri = process.env.MONGO_URI
+let client;
+let clientPromise;
 
-module.exports = connectDB;
+if (!uri){
+    throw new Error('Please add URI to env vars')
+}
+
+
+if (process.env.NODE_ENV == 'dev'){
+    if(!global._mogoClientPromise){
+        console.log('Creating new DB connection')
+        global._mogoClientPromise = mongoose.connect( uri, {useNewUrlParser: true} )
+    }
+    clientPromise = global._mogoClientPromise
+}else{
+    client = mongoose.connect( uri, {useNewUrlParser: true} )
+    clientPromise = client.connect()
+}
+
+module.exports = clientPromise;
