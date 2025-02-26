@@ -7,25 +7,27 @@ const authns =  require('./src/routes/authns')
 const adminRoutes =  require('./src/routes/admins')
 const studentRoutes =  require('./src/routes/students')
 
-// const connectDB = require('./src/db')
+const connectDB = require('./src/db')
 const app = express()
 const port = process.env.PORT || 4000
 // const port = 4000
 
 // Middleware
 app.use(express.static('public'))
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'public','views'));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 // Connect to MongoDB
-// connectDB()
+connectDB()
 
 
 // Routes
 app.use('/', studentRoutes)
 app.use('/', adminRoutes)
-app.use('/api/authn', authns)
+app.use('/api/auth', authns)
 
 app.get('/',(req,res)=>{
   res.sendFile(path.join(__dirname, '/public/pages/landing.html'))
