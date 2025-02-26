@@ -17,6 +17,7 @@ async function connectToDatabase() {
     return cachedDB
 }
 
+
 module.exports = connectToDatabase
 
 // const USERS = []
