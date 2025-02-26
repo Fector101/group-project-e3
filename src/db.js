@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 let cachedDB
-const uri = process.env.MONGO_URI
+const uri = process.env.MONGODB_URI
 
 if (!uri){
     throw new Error('Please add URI to env vars')
