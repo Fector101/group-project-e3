@@ -45,7 +45,6 @@ module.exports = connectToDatabase
 //   const user = USERS.find(user => user.id === id)
 //   user.passKey.counter = counter
 // }
-
 // module.exports = {
 //   getUserByMatricNo,
 //   getUserById,
