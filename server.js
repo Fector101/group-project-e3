@@ -1,48 +1,48 @@
-require('dotenv').config();
+require('dotenv').config()
+const path = require('path');
+const express = require('express')
+const cors = require('cors')
 
-const express = require('express');
-const mongoose = require('mongoose');
-const authRoutes =  require('./src/routes/admin-authn');
-const userRoutes =  require('./src/routes/user-authn');
-const adminPanelRoute = require('./src/routes/admin-panel');
-const cors = require('cors');
-const connectDB = require('./src/db');
+const authns =  require('./src/routes/authns')
+const adminRoutes =  require('./src/routes/admins')
+const studentRoutes =  require('./src/routes/students')
 
-const app = express();
-const port = process.env.PORT || 3000;
+// const connectDB = require('./src/db')
+const app = express()
+const port = process.env.PORT || 4000
+// const port = 4000
 
 // Middleware
 app.use(express.static('public'))
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
 // Connect to MongoDB
-connectDB();
-
-
-app.use('/api/auth', userRoutes);
-app.use(authRoutes);
-app.use(adminPanelRoute);
+// connectDB()
 
 
 // Routes
-// app.use('/api/auth', require('./src/routes/auth'));
-
-
+app.use('/', studentRoutes)
+app.use('/', adminRoutes)
+app.use('/api/authn', authns)
 
 app.get('/',(req,res)=>{
-  res.sendFile('index.html')
+  res.sendFile(path.join(__dirname, '/public/pages/signup.html'))
+  
 })
 
-// 404 Route
+
+// For when user puts in wrong Routes
 app.use((req,res)=>{
   res.status(404).send('Page This Page dosen\'t exist')
 })
 
 
 
-// Start Server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Servering on localhost:${port}`);
 });
+
+//for vercel serverless functions
+module.exports = app;
