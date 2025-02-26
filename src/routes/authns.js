@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const Student = require('../models/Student')
 const path = require('path')
 const crypto = require("crypto");
-const base64url = require("base64url");
 const { isoBase64URL } = require('@simplewebauthn/server/helpers');
 const cookieParser = require("cookie-parser")
 // isoBase64URL.toUTF8String(base64url.toBuffer("dGVzdA=="))

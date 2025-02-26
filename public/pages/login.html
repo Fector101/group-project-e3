@@ -8,20 +8,14 @@
     <script defer src="js/login.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h2>Student Login</h2>
-        <form method="POST">
-            <label for="matric">Matric Number:</label>
-            <input type="text" id="matric" name="matric-no" value="A123456" required>
-
-            <label for="fingerprint">Fingerprint Authentication:</label>
-            <button type="submit" id="loginBtn">Login</button>
-            <p id="text"></p>
+    <div id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="login-matric" placeholder="Matric Number" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
         </form>
-        
-        <p>Not registered? 
-            <a href="/signup">Signup</a>
-        </p>        
+         <p>Don't have an account yet? <a href="/signup">Register</a></p>
     </div>
 </body>
 </html>

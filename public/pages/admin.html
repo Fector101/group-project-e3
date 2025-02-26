@@ -9,14 +9,10 @@
 
 </head>
 <body>
-    <div class="container">
-        <h2>Admin Login</h2>
-        <form>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p><a href="/signup">Go to Student Signup</a></p>
+    <div id="results" class="hidden">
+        <h2>Live Election Results</h2>
+        <div id="results-container"></div>
+        <button onclick="showPage('vote')">Back to Voting</button>
     </div>
 </body>
 </html>
