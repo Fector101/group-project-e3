@@ -30,7 +30,7 @@ app.use('/', adminRoutes)
 app.use('/api/auth', authns)
 
 app.get('/',(req,res)=>{
-  res.sendFile(path.join(__dirname, '/public/pages/landing.html'))
+  res.sendFile(path.join(__dirname, '/public/pages/signup.html'))
   
 })
 
