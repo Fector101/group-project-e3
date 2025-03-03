@@ -25,13 +25,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
-// app.use(
-//   cors({
-//     // origin: "http://localhost:1234", // Replace with your frontend URL
-//     credentials: true, // Allow cookies to be sent
-//   })
-// );
-
+app.use(
+   cors({
+  origin:process.env.FRONTEND_URL://localhost:1234", // Replace with your frontend URL
+    credentials: true, // Allow cookies to be sent
+ })
+);
 // app.use(cors({ origin: "http://localhost:1234" }));
 
 
