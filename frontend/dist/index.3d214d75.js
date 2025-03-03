@@ -2962,12 +2962,12 @@ const root = document.getElementById("app");
 (0, _clientDefault.default).createRoot(root).render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.BrowserRouter), {
     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _app.App), {}, void 0, false, {
         fileName: "index.js",
-        lineNumber: 16,
+        lineNumber: 15,
         columnNumber: 5
     }, undefined)
 }, void 0, false, {
     fileName: "index.js",
-    lineNumber: 15,
+    lineNumber: 14,
     columnNumber: 3
 }, undefined));
 
