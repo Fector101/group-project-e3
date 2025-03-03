@@ -4,7 +4,7 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT =7000;
+const PORT =process.env.PORT || 7000;
 
 
 
@@ -22,14 +22,14 @@ const connectDB = require('./src/db')
 // app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-// app.use(cors())
+app.use(cors())
 
-app.use(
-  cors({
-    // origin: "http://localhost:1234", // Replace with your frontend URL
-    credentials: true, // Allow cookies to be sent
-  })
-);
+// app.use(
+//   cors({
+//     // origin: "http://localhost:1234", // Replace with your frontend URL
+//     credentials: true, // Allow cookies to be sent
+//   })
+// );
 
 // app.use(cors({ origin: "http://localhost:1234" }));
 
