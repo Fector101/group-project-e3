@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, "dist"))); // Use "build" if CRA
 
 // Catch-all route to serve index.html
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
 
 // Start the server

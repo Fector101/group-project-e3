@@ -1,0 +1,19 @@
+{
+  "name": "voting",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "parcel build public/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.2.0",
+    "react-router-dom": "^7.2.0"
+  }
+}
