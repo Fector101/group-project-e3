@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
         const { matric_no, password } = req.body;
 
         const user = await Student.findOne({ matric_no });
-        if (!user) return res.status(400).json({ error: 'Student doesn\'t exist' });
+        if (!user) return res.status(400).json({ msg: 'Student doesn\'t exist' });
 
 
         const isMatch = await bcrypt.compare(password, user.password);
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
         res.json({ msg: user.username });
     } catch (err) {
         console.log('login error: ', err)
-        res.status(500).json({ error: 'Server error' });
+        res.status(500).json({ msg: 'Server error' });
     }
 });
 
