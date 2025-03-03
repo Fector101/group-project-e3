@@ -23,7 +23,7 @@ export default function Loginpage(){
         if (data.exists) {
             setError('Student already exists');
         }else if (!response.ok) {
-            setError(data.message);
+            setError(data.msg);
         }
          else {
             console.log(data.msg)
