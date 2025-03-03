@@ -27,7 +27,7 @@ app.use(cors())
 
 app.use(
    cors({
-  origin:process.env.FRONTEND_URL://localhost:1234", // Replace with your frontend URL
+  origin:process.env.FRONTEND_URL,//localhost:1234", // Replace with your frontend URL
     credentials: true, // Allow cookies to be sent
  })
 );
