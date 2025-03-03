@@ -1,10 +1,12 @@
 {
-  "name": "e3",
+  "name": "ff",
   "version": "1.0.0",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "parcel public/index.html",
+    "build": "npx nodemon server.js",
+    "backend": "nodemon backend/server.js",
+    "frontend": "parcel frontend/public/index.html",
+    "dev": "concurrently \"npx nodemon backend/server.js\" \"parcel frontend/public/index.html\""
   },
   "keywords": [],
   "author": "",
@@ -12,15 +14,19 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
-    "@simplewebauthn/browser": "^13.1.0",
-    "@simplewebauthn/server": "^13.1.1",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.10.1"
+    "mongoose": "^8.11.0",
+    "react": "^19.0.0",
+    "react-router-dom": "^7.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
   }
 }
