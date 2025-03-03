@@ -7,7 +7,6 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
-    "dotenv": "^16.4.7",
     "process": "^0.11.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
