@@ -1,13 +1,12 @@
 {
   "name": "voting",
   "version": "1.0.0",
-  "main": "backend/server.js",
   "scripts": {
-    "start": "parcel public/index.html",
     "backend": "nodemon backend/server.js",
-    "build": "npx nodemon backend/server.js",
     "frontend": "parcel frontend/public/index.html",
     "frontend_build": "parcel build frontend/public/index.html",
+    "start": "parcel public/index.html",
+    "build": "npx nodemon backend/server.js",
     "dev": "concurrently \"npx nodemon backend/server.js\" \"parcel frontend/public/index.html\""
   },
   "keywords": [],
@@ -24,6 +23,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.11.0",
     "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.2.0",
     "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
