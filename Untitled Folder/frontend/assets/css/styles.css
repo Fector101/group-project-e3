@@ -1,0 +1,142 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.results-bar {
+    background-color: #007bff;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: width 0.5s ease;
+}
+
+/* Landing page */
+
+.btn-a:hover {
+    background-color: #0056b3;
+}
+
+.btn-a {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#admin-dashboard{
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#results-container{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: yellow; */
+
+}
+.candidate *{
+    margin: 0;
+    padding: 0;
+}
+.candidate{
+    border-radius: 10px;
+    background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    /* border: 1px solid black; */
+    width: 80%;
+    gap: 30px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    padding-block: 20px;
+}
+.candidate img{
+    flex: 1;
+    width:  140px;
+    /* height: ; */
+    /* width: 100%; */
+}    
+.candidate .texts{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 70px;
+    
+}
