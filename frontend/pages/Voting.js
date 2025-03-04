@@ -110,14 +110,15 @@ export default function VotinpPage(){
                 Candidate B
             </label> */}
               <h3>Select Election</h3>
-            <select onChange={handleElectionChange} value={selectedElection}>
-                <option value="">-- Select an Election --</option>
-                {elections.map((election) => (
-                    <option key={election._id} value={election._id}>
-                        {election.title}
-                    </option>
-                ))}
-            </select>
+                {
+                    elections?
+                        <select onChange={handleElectionChange} value={selectedElection}>
+                            <option value="">-- Select an Election --</option>
+                            {elections.map((election) => ( <option key={election._id} value={election._id}> {election.title} </option> ))}
+                        </select>
+                    :
+                    <p>No ongoing Election</p>
+            }
 
             <h3>Select Candidate</h3>
             <select onChange={handleCandidateChange} value={selectedCandidate.id}>
