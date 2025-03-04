@@ -26,7 +26,7 @@ router.get('/ongoing-elections', async (req, res) => {
         const ongoingElections = await Election.find({ status: 'ongoing' });
         
         if (!ongoingElections.length) {
-            return res.status(404).json({ msg: 'No ongoing elections found' });
+            return res.status(404).json({ elections:[], msg: 'No ongoing elections found' });
         }
 
         res.json({ elections: ongoingElections });

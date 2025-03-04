@@ -1,7 +1,7 @@
 # group-project-e3
 Voting Project
 
-
+Just run `fabian@fabian-X550LA:~/Desktop/Group Projects/group-project-e3/backend$ npm run dev` before delopyment
 
 "backend": "nodemon backend/server.js",
     "frontend": "parcel frontend/public/index.html",
