@@ -38,7 +38,7 @@ router.get('/dashboard',verifyToken, (req, res) => {
 
 
 router.get('/ele-results', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/pages/election-result.html'));
+    res.sendFile(path.join(__dirname, '../frontend/public/pages/election-result.html'));
 })
 
 
