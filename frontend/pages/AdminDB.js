@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useNavigate} from "react-router-dom";
 
 import { URL } from "../helper/basic";
 const getCurrentDate = () => new Date().toISOString().split("T")[0];
@@ -96,6 +97,9 @@ export default function AdminDashboard() {
 
     return (
         <div id="admin-dashboard" style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
+            <div className='admin-header'>
+                <Link to='/voters-info'> Voters Info </Link>
+            </div>
             <h2>Add New Post</h2>
             <input type="text" placeholder="Post" value={newElection.title} onChange={(e) => setNewElection({ ...newElection, title: e.target.value })} />
             <input type="text" placeholder="Description" value={newElection.description} onChange={(e) => setNewElection({ ...newElection, description: e.target.value })} />

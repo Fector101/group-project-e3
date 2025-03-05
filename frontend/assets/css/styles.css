@@ -142,3 +142,17 @@ form {
     color:blue;
     text-decoration: underline;
 }
+.admin-header{
+    display: flex;
+    justify-content: right;
+    color: beige;
+}
+.admin-header a{
+    background-color: #007bff;
+    padding: 5px 10px;
+}
+
+.admin-header a:hover{
+    background-color: #0260c5;
+    padding: 5px 10px;
+}
