@@ -19,7 +19,7 @@ function Candidates({name,matric_no}){
     }
 
     return (
-        <div className="candidate" style={{order: voters}}>
+        <div className="candidate" style={{order: -(voters.length)}}>
             <img src="https://avatar.iran.liara.run/public" />
             <div className="texts">
                 <p>Name: {name}</p>
