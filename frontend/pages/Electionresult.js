@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { URL } from "../helper/basic";
 function Candidates({name,matric_no}){
     useEffect(()=>{
+        getVoters()
         const interval = setInterval(getVoters, 1000)
         return () => clearInterval(interval)
         
