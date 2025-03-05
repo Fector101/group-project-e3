@@ -6,8 +6,8 @@ import { URL } from "../helper/basic";
 export default function Loginpage(){
 
     const navigate = useNavigate()
-    const [password, setPassword] = useState('2222');
-    const [matric_no, setMatricno] = useState('FTCMP00001');
+    const [password, setPassword] = useState('');
+    const [matric_no, setMatricno] = useState('');
     const [error, setError] = useState('  ');
     
     const handleSubmit = async (e) => {

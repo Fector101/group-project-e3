@@ -4,10 +4,10 @@ import { URL } from "../helper/basic";
 
 export default function (){
     const navigate = useNavigate()
-    const [email, setEmail] = useState("fector101@yahoo.com");
-    const [password, setPassword] = useState('2222');
-    const [matric_no, setMatricno] = useState('FTCMP00001');
-    const [username, setName] = useState('Fabian');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState('');
+    const [matric_no, setMatricno] = useState('');
+    const [username, setName] = useState('');
     const [error, setError] = useState('  ');
 
     const handleSubmit = async (e) => {
