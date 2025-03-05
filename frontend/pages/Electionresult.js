@@ -2,24 +2,24 @@ import { useEffect, useState } from "react";
 
 import { URL } from "../helper/basic";
 function Candidates({name,matric_no}){
-    // const  = props
     useEffect(()=>{
-        getVoters()
+        const interval = setInterval(getVoters, 1000)
+        return () => clearInterval(interval)
+        
     },[])
     let [voters, setVoters] = useState([])
     async function getVoters(){
         const res = await fetch(`${URL}/api/admin/election-candidate/${matric_no}`);
         const data = await res.json()
         if(res.ok){
-            const interval = setInterval( () => setVoters(data.candidate.voters), 1000)
+            setVoters(data.candidate.voters)
             console.log(data)
-            return () => clearInterval(interval)
         }
         
     }
 
     return (
-        <div className="candidate">
+        <div className="candidate" style={{order: voters}}>
             <img src="https://avatar.iran.liara.run/public" />
             <div className="texts">
                 <p>Name: {name}</p>
@@ -35,7 +35,6 @@ export default function Electionresult(){
     const [elections, setElections] = useState([ ]);
     const [candidates, setCandidates] = useState([ ])
 
-candidates.sort((a, b) => a.voters.length < b.voters.length ? 1 : -1);
     useEffect(() => {
         fetchElections();
     }, []);
@@ -79,9 +78,9 @@ candidates.sort((a, b) => a.voters.length < b.voters.length ? 1 : -1);
     return  (
     <div id="results">
         <h2>Live Election Results</h2>
-        <h3>Select Election</h3>
+        <h3>Select Post</h3>
             <select onChange={handleElectionChange} value={selectedElection}>
-                <option value="">-- Select an Election --</option>
+                <option value="">-- Select a Post --</option>
                 {elections.map((election) => (
                     <option key={election._id} value={election._id}>
                         {election.title}

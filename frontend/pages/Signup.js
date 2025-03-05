@@ -1,9 +1,9 @@
 import { useState } from "react"
-import "../assets/css/styles.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { URL } from "../helper/basic";
 
 export default function (){
+    const navigate = useNavigate()
     const [email, setEmail] = useState("fector101@yahoo.com");
     const [password, setPassword] = useState('2222');
     const [matric_no, setMatricno] = useState('FTCMP00001');
@@ -26,7 +26,7 @@ export default function (){
             setError(data.message);
         }
          else {
-            alert('Login successful');
+            navigate(`/voting?matric_no=${matric_no}&student_name=${username}`);
         }
     };
 

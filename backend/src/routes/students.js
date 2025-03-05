@@ -44,27 +44,25 @@ router.get('/ele-results', (req, res) => {
 
 router.post("/vote", async (req, res) => {
     try {
-        const { studentMatricNo, candidateMatricNo } = req.body;
+        const { studentMatricNo, candidateMatricNo,electionId } = req.body;
 
         const candidate = (await Candidate.find({ matric_no: candidateMatricNo }))[0]
-        
-
-        console.log(candidate,' This is candidate')
-        console.log(candidate.voters,' This is voters')
-        console.log(studentMatricNo,' This is studentMatricNo')
-
         if (!candidate) {
             return res.status(404).json({ msg: "Candidate not found" });
         }
 
         // Check if the voter has already voted
-        if (candidate.voters.includes(studentMatricNo)) {
+        const election = await Election.findById(electionId);
+        console.log(election, '<----- election')
+        if (election.voters.includes(studentMatricNo)) {
             return res.status(400).json({ msg: "You have already voted." });
         }
 
         // Add voter's matric number
+        election.voters.push(studentMatricNo);
         candidate.voters.push(studentMatricNo);
         await candidate.save();
+        await election.save();
 
         res.json({ msg: "Vote recorded successfully!", totalVotes: candidate.voters.length });
     } catch (error) {

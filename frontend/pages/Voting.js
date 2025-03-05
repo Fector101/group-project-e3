@@ -33,7 +33,6 @@ export default function VotinpPage(){
             return;
         }
         document.querySelector('.msg').innerText = selectedCandidate.name;
-        console.log(selectedCandidate, 'see me');
         try {
             const response = await fetch(`${URL}/vote`, {
                 method: "POST",
@@ -43,6 +42,7 @@ export default function VotinpPage(){
                 body: JSON.stringify({
                     
                     studentMatricNo: matric_no,
+                    electionId: selectedElection,
                     candidateMatricNo: selectedCandidate.matric_no,
                 }),
             });
@@ -99,21 +99,12 @@ export default function VotinpPage(){
     <div id="vote">
         <h2>Welcome to the Voting Page, {student_name} !</h2>
         <h2 className="msg">Cast Your Vote</h2>
-        {/* <form id="vote-form" action="/api/auth/vote" method="POST"> */}
         <form id="vote-form">
-            {/* <label>
-                <input type="radio" name="candidate" value="Candidate A" />
-                 Candidate A
-            </label>
-            <label>
-                <input type="radio" name="candidate" value="Candidate B" /> 
-                Candidate B
-            </label> */}
-              <h3>Select Election</h3>
+              <h3>Select Post</h3>
                 {
                     elections?
                         <select onChange={handleElectionChange} value={selectedElection}>
-                            <option value="">-- Select an Election --</option>
+                            <option value="">-- Select a Post --</option>
                             {elections.map((election) => ( <option key={election._id} value={election._id}> {election.title} </option> ))}
                         </select>
                     :

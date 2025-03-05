@@ -96,12 +96,12 @@ export default function AdminDashboard() {
 
     return (
         <div id="admin-dashboard" style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
-            <h2>Add New Election</h2>
+            <h2>Add New Post</h2>
             <input type="text" placeholder="Title" value={newElection.title} onChange={(e) => setNewElection({ ...newElection, title: e.target.value })} />
             <input type="text" placeholder="Description" value={newElection.description} onChange={(e) => setNewElection({ ...newElection, description: e.target.value })} />
             <input type="date" value={newElection.startDate} onChange={(e) => setNewElection({ ...newElection, startDate: e.target.value })} />
             <input type="date" value={newElection.endDate} onChange={(e) => setNewElection({ ...newElection, endDate: e.target.value })} />
-            <button onClick={handleAddElection}>Add Election</button>
+            <button onClick={handleAddElection}>Add Post</button>
 
             <h2>Add Candidate</h2>
             <select onChange={handleElectionChange} value={selectedElection}>

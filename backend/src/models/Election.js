@@ -13,7 +13,8 @@ const electionSchema = new mongoose.Schema({
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: true },
     candidates: [candidateSchema],
-    status: { type: String, enum: ['upcoming', 'ongoing', 'completed'], required: true, default: 'upcoming' }
+    status: { type: String, enum: ['upcoming', 'ongoing', 'completed'], required: true, default: 'upcoming' },
+    voters: [{ type: String }] 
 }, { timestamps: true });
 
 

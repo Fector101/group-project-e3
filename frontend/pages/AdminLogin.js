@@ -15,7 +15,7 @@ export default function AdminLogic() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                credentials: "include", // Important for HTTP-only cookies
+                // credentials: "include",
                 body: JSON.stringify({ password }),
             });
 
@@ -47,7 +47,7 @@ export default function AdminLogic() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">Login</button>
+                <button className="bg-blue-900 text-white" type="submit">Login</button>
             </form>
         </div>
     );

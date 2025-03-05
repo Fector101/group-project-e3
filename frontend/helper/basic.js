@@ -1,2 +1,2 @@
-export const URL = ''
-// export const URL = 'http://localhost:7000'
+// export const URL = ''
+export const URL = 'http://192.168.148.4:7000'

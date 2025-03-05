@@ -6,7 +6,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f9;
+    background-color: #cae9f9;
     color: #333;
 }
 
@@ -19,8 +19,7 @@ form {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-input,
-button {
+#admin-dashboard button,#admin-dashboard input,form input, form button {
     display: block;
     margin: 10px 0;
     padding: 10px;
@@ -28,8 +27,7 @@ button {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
-button {
+#admin-dashboard button,form button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -37,9 +35,9 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+#admin-dashboard button, form button:hover {
     background-color: #0056b3;
-}
+} 
 
 .hidden {
     display: none;
@@ -93,11 +91,11 @@ button:hover {
 
 #admin-dashboard{
     width: 80%;
-    position: absolute;
+    /* position: absolute;
     left: 0;
     right: 0;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
 }
 
 #results-container{
@@ -139,4 +137,8 @@ button:hover {
     gap: 5px;
     height: 70px;
     
+}
+#register a,#login a,#signup a{
+    color:blue;
+    text-decoration: underline;
 }

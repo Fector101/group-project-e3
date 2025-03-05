@@ -31,7 +31,7 @@ app.use(
     credentials: true, // Allow cookies to be sent
  })
 );
-// app.use(cors({ origin: "http://localhost:1234" }));
+// app.use(cors({ origin: "" }));
 
 
 // Connect to MongoDB

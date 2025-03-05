@@ -85,8 +85,9 @@ router.get('/election/:id/candidates', async (req, res) => {
 });
 router.get("/election-candidate/:matric_no", async (req, res) => {
     try {
-        const { matric_no } = req.params;
 
+        const { matric_no } = req.params;
+        console.log(matric_no)
         // Find if any election has a candidate with this matric_no
         const candidate = await Candidate.findOne({ matric_no });
 
