@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import userImg from "./../assets/imgs/user.jpg"
+import userImg from "./../assets/imgs/user.png"
 import { URL } from "../helper/basic";
 function Candidates({name,matric_no}){
     useEffect(()=>{
