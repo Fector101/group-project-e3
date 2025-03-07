@@ -23,4 +23,4 @@ export const getAllRegStudents = async(stateSetted) =>{
     // stateSetted(data.elections);
     
 }
-// export const URL = 'http://192.168.148.4:7000'
+// export const URL = 'http://192.168.1.49:7000'
