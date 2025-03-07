@@ -1,5 +1,3 @@
-// Contains Scheme For DB
-
 const mongoose = require('mongoose');
 
 const StudentSchema = new mongoose.Schema({

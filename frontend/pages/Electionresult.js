@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import userImg from "./../assets/imgs/user.jpg"
 import { URL } from "../helper/basic";
 function Candidates({name,matric_no}){
     useEffect(()=>{
@@ -21,7 +21,7 @@ function Candidates({name,matric_no}){
 
     return (
         <div className="candidate" style={{order: -(voters.length)}}>
-            <img src="https://avatar.iran.liara.run/public" />
+            <img src={userImg} />
             <div className="texts">
                 <p>Name: {name}</p>
                 <p>Matric No: {matric_no}</p>
